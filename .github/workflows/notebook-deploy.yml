@@ -55,7 +55,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ template.html CLAUDE.md
+          git add template.html CLAUDE.md
+          [ -d data ] && git add data/ || true
           git diff --staged --quiet || git commit -m "Update data and shared files"
           git push || true
 
