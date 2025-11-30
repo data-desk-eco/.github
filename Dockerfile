@@ -1,6 +1,6 @@
 FROM node:22-slim
 RUN corepack enable && \
-    apt-get update && apt-get install -y --no-install-recommends curl git make unzip ca-certificates && \
+    apt-get update && apt-get install -y --no-install-recommends curl git make unzip ca-certificates python3 && \
     curl -fsSL -o /tmp/duckdb.zip https://github.com/duckdb/duckdb/releases/download/v1.4.2/duckdb_cli-linux-amd64.zip && \
     unzip -q /tmp/duckdb.zip -d /usr/local/bin && rm /tmp/duckdb.zip && \
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg -o /usr/share/keyrings/githubcli-archive-keyring.gpg && \
