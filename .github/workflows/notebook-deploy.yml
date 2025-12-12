@@ -28,6 +28,9 @@ jobs:
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           curl -sS -o template.html https://raw.githubusercontent.com/data-desk-eco/.github/main/template.html &
           curl -sS -o CLAUDE.md https://raw.githubusercontent.com/data-desk-eco/.github/main/CLAUDE.md &
+          mkdir -p .claude/skills/notebooks-front-end .claude/skills/notebooks-back-end
+          curl -sS -o .claude/skills/notebooks-front-end/SKILL.md https://raw.githubusercontent.com/data-desk-eco/.github/main/.claude/skills/notebooks-front-end/SKILL.md &
+          curl -sS -o .claude/skills/notebooks-back-end/SKILL.md https://raw.githubusercontent.com/data-desk-eco/.github/main/.claude/skills/notebooks-back-end/SKILL.md &
           wait
 
       - name: Run make data
@@ -45,7 +48,7 @@ jobs:
       - name: Commit updates
         run: |
           git config user.name "github-actions[bot]" && git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add template.html CLAUDE.md
+          git add template.html CLAUDE.md .claude/
           [ -d data ] && git add data/
           git diff --cached --quiet || git commit -m "Update data and shared files" && git push
 
