@@ -9,8 +9,10 @@ repo/
 ├── docs/
 │   ├── index.html           # Notebook source (EDIT THIS)
 │   ├── assets/              # Images
-│   └── .observable/dist/    # Built output (gitignored)
+│   .observable/dist/        # Built output (gitignored)
 ├── data/                    # DuckDB, CSV, JSON files
+│   └── data.duckdb          # Main database, queried from the notebook
+├── scripts/                 # Scripts for building the database, e.g. by fetching data and etl'ing it
 ├── template.html            # HTML wrapper (auto-updates from .github repo)
 ├── Makefile
 └── CLAUDE.md                # This file (auto-updates)
@@ -22,6 +24,7 @@ repo/
 ## Style guide
 
 - Use **sentence case** for all titles, headings, and chart titles (e.g., "Outages by country" not "Outages By Country")
+- *Always* use SQL cells interacting with the main DuckDB database for SQ
 
 ## Critical gotchas
 
