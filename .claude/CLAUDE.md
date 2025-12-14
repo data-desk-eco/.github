@@ -15,11 +15,12 @@ repo/
 ├── scripts/                 # Scripts for building the database, e.g. by fetching data and etl'ing it
 ├── template.html            # HTML wrapper (auto-updates from .github repo)
 ├── Makefile
-└── CLAUDE.md                # This file (auto-updates)
+├── CLAUDE.md                # Optional project-specific instructions
+└── .claude/CLAUDE.md        # Shared instructions (auto-updates from .github repo)
 ```
 
-**Commit:** `docs/index.html`, `data/*`, `docs/assets/*`, `Makefile`
-**Don't commit:** `docs/.observable/dist/`, `node_modules/`, `template.html`, `CLAUDE.md`, `.claude/`
+**Commit:** `docs/index.html`, `data/*`, `docs/assets/*`, `Makefile`, `CLAUDE.md` (if project-specific)
+**Don't commit:** `docs/.observable/dist/`, `node_modules/`, `template.html`, `.claude/`
 
 ## Style guide
 
@@ -34,7 +35,7 @@ repo/
 4. **Cell IDs:** Must be unique across notebook
 5. **Await FileAttachment:** All FileAttachment calls return promises
 6. **Edit source:** Edit `docs/index.html`, not `docs/.observable/dist/`
-7. **Auto-updating files:** `template.html`, `CLAUDE.md`, and `.claude/` download from `.github` repo on deploy
+7. **Auto-updating files:** `template.html` and `.claude/` download from `.github` repo on deploy
 8. **Case-sensitive paths:** GitHub Pages is case-sensitive
 9. **SQL cells at build time:** Database must exist when running `make build`
 
