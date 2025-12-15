@@ -220,13 +220,21 @@ ports.forEach(p => {
 # Install dependencies (required for DuckDB queries)
 yarn
 
-# Preview with hot reload
+# Preview with hot reload (auto-kills existing servers first)
 make preview
-# or: yarn preview
 
 # Build for production
 make build
-# or: yarn build
+
+# Kill any orphaned preview servers
+make kill
+```
+
+**For Claude Code:** Run preview in background, then kill when done:
+```bash
+make preview &   # Start in background
+# ... do work ...
+make kill        # Clean up when finished
 ```
 
 ## Resources
