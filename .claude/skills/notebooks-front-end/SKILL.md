@@ -212,6 +212,23 @@ ports.forEach(p => {
 });
 ```
 
+## Building and previewing
+
+**Before building or previewing, always run `yarn` first** to install dependencies (including DuckDB). Without this, SQL queries will fail silently.
+
+```bash
+# Install dependencies (required for DuckDB queries)
+yarn
+
+# Preview with hot reload
+make preview
+# or: yarn preview
+
+# Build for production
+make build
+# or: yarn build
+```
+
 ## Resources
 
 - Observable Notebook Kit: https://observablehq.com/notebook-kit/
