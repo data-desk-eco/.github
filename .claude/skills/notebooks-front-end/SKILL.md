@@ -1,6 +1,6 @@
 ---
 name: notebooks-front-end
-description: Use when editing Observable notebooks (docs/index.html), creating charts with Plot, adding SQL cells, loading data with FileAttachment, or working with DuckDB. Triggers on notebook editing, visualization, data loading.
+description: Use when editing docs/index.html, creating charts with Plot, adding SQL cells, loading data with FileAttachment, or building visualizations. Triggers on any editing of docs/index.html, Observable notebooks, or front-end visualization work.
 ---
 
 # Observable Notebook Kit 2.0
